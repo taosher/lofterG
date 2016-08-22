@@ -1,0 +1,35 @@
+{
+  "name": "lofterG",
+  "version": "0.0.8",
+  "description": "A generator for building lofter project easily",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "lofterG": "./bin/lofterG.js"
+  },
+  "engines": {
+    "node": ">=0.10.x"
+  },
+  "keywords": [
+    "lofter",
+    "nej",
+    "generator",
+    "lofterG"
+  ],
+  "author": "MarkTao (chukuang)",
+  "license": "MIT",
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "shelljs": "^0.7.3",
+    "through2": "^2.0.1"
+  },
+  "dependencies":{
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "shelljs": "^0.7.3",
+    "through2": "^2.0.1"
+  }
+}
