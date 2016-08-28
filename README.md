@@ -58,7 +58,7 @@ lofterG <command> [options] <project name>
 
 - author:chukuang(paoloo1995)
 - repository:[lofterG](https://github.com/paoloo1995/lofterG.git)
-- contact:toolve@foxmail.com
+- contact:toolve#foxmail.com
 
 #### Welcome to contribute
 
