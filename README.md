@@ -42,11 +42,11 @@ lofterG <command> [options] <project name>
 
      Detail console information helps u find error quickly and easily.
 
-2. Colorful Console log
+2. Colorful Console Log
 
      The loferG provides colorful console logs which can helps u to know how it works.
 
-3. Flexible syntax
+3. Flexible syanax
 
      Just write your options like this:
 
@@ -58,7 +58,7 @@ lofterG <command> [options] <project name>
 
 - author:chukuang(paoloo1995)
 - repository:[lofterG](https://github.com/paoloo1995/lofterG.git)
-- contact:toolve#foxmail.com
+- toolve@foxmail.com
 
 #### Welcome to contribute
 

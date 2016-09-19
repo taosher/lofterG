@@ -1,6 +1,6 @@
 {
   "name": "lofterG",
-  "version": "0.0.8",
+  "version": "0.1.44",
   "description": "A generator for building lofter project easily",
   "main": "index.js",
   "scripts": {
