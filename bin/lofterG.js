@@ -14,25 +14,34 @@ var colors = require('colors');
 var initJS = require('./initJS');
 var initFtl = require('./initFtl');
 var startTime = (new Date()).getTime();
+var cp = require('child_process');
 require('shelljs/global');
 
-console.log('Start...'.green);
-
 //Delete template files
-function rmFiles() {
-    exec('rm ./lofter-generator/pc.ftl');
-    exec('rm ./lofter-generator/mobile.ftl');
-    exec('rm ./lofter-generator/nej-m.js');
-    exec('rm ./lofter-generator/nej-v.js');
-    exec('rm ./lofter-generator/nej-c.js');
-    exec('rm ./lofter-generator/nej-pc.js');
-    exec('rm  -rf ./lofter-generator/.git');
+function rmFiles(name) {
+    exec('del lofter-generator\\pc.ftl');
+    exec('del lofter-generator\\mobile.ftl');
+    exec('del lofter-generator\\nej-m.js');
+    exec('del lofter-generator\\nej-v.js');
+    exec('del lofter-generator\\nej-c.js');
+    exec('del lofter-generator\\nej-pc.js');
+    exec('rmdir lofter-generator\\.git /Q/S');
+    
 }
 
 //renameFolder
 function renameFolder(name) {
-    exec('cp -r ./lofter-generator ' + name);
-    exec('rm  -rf ./lofter-generator');
+    // exec('xcopy lofter-generator ' + name + ' /Q/Y/I');
+    // exec('rmdir lofter-generator /Q/S')
+    // var str = 'ren lofter-generator ' +' '+ name; 
+    // cp.exec('rename lofter-generator' + name ,function(){console.log('rename excute ' + name)})
+    fs.rename('./lofter-generator','./'+name,function(err){
+        if (!!err) {
+            console.log('Rename Err:',err);
+        } else {
+            console.log('Rename ... 100%');
+        }
+    });
 }
 
 program
@@ -48,7 +57,8 @@ program
     .command('remove <project name>')
     .description('remove project')
     .action(function(proname) {
-        exec('rm  -rf ./' + proname);
+        console.log('Start...'.green);
+        exec('rmdir ' + proname + ' /Q/S');
         console.log('Project has removed.')
         console.log('End.\n'.green);
         console.log('--------------------------------------');
@@ -60,6 +70,7 @@ program
     .command('init <project name>')
     .description('init project')
     .action(function(proname) {
+        console.log('Start...'.green);
         var m = program.mobile,
             f = program.ftl,
             p = program.pc,
@@ -85,9 +96,8 @@ program
             return ;
         }
 
+        renameFolder(name);
         rmFiles();
-
-        renameFolder(proname);
 
         console.log('End.\n'.green);
         console.log('--------------------------------------');

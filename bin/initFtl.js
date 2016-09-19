@@ -23,9 +23,12 @@ var specify = function(proName,templateName) {
             var str = chunk.toString();
             str = str.replace(/{project}/g,proName).replace(/{Project}/g,upperCaseWord(proName))
             this.push(new Buffer(str));
-            cb();
+            cb(null);
         }))
-        .pipe(fs.createWriteStream('./lofter-generator/' + proName + '.ftl'));
+        .pipe(fs.createWriteStream('./lofter-generator/' + proName + '.ftl'))
+        .on('error', function(e){
+            console.error(e)
+        });
 } 
 
 function init(isMobile,isPC,proName) {

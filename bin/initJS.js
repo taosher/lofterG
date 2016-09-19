@@ -11,7 +11,6 @@ var colors = require('colors');
 var fs = require('fs');
 var through2 = require('through2');
 require('shelljs/global');
-
 //change "xxx" to "Xxx"
 var upperCaseWord = function(str) {
     var Str = str[0].toUpperCase() + str.substr(1);
