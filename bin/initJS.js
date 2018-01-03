@@ -42,7 +42,7 @@ function init(isMobile,isPC,proName) {
         console.error('But you can\'t choose both.'.red);
         return false ;
     }
-    exec('git clone ssh://git@g.hz.netease.com:22222/hzhanyuntao/lofter-generator.git');
+    exec('git clone ssh://git@xxxx/xxxxxx/lofter-generator.git');
     if (!mobileMode) {
         console.log('choose template:','pc'.yellow);
         specify(proName,'nej-pc');
